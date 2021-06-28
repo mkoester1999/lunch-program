@@ -31,6 +31,8 @@ def assign_groups():
         next_employee = random.choice(employees)
         employees.remove(next_employee)
         group.append(next_employee)
+
+        #might not be the best idea to have this here instead of in the main function, but performance would be better to just do it here
         output.write(next_employee + "\n")
     
     #add previous group back in
@@ -40,6 +42,7 @@ def assign_groups():
     print(group)
    
 if __name__ == "__main__":
+    #clear old group file if it exists
     open("groups.txt", "w").close()
     output = open("groups.txt", "a")
 
